@@ -45,7 +45,7 @@ class Scratchblocks_For_WP {
 		);
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-		add_action( 'wp_head', array( $this, 'wp_head' ) );
+		add_action( 'wp_footer', array( $this, 'wp_footer' ), 100 );
 		add_shortcode( 'scratchblocks', array(  $this, 'scratchblocks' ) );
 	}
 	public function scratchblocks( $atts, $content = null  ) 
@@ -59,10 +59,10 @@ class Scratchblocks_For_WP {
 		$output .= '</'.$element.'>';
 		return $output;
 	}
-	public function wp_head( )
+	public function wp_footer( )
 	{
     	echo "<script>\n";
-    	echo "\t$(document).ready( function( ) {\n";
+    	echo "\tjQuery(document).ready( function( ) {\n";
 		echo "\t\tscratchblocks2.parse('.blocks');\n";
 		echo "\t});\n";
     	echo "</script>\n";
