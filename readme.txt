@@ -30,6 +30,10 @@ http://wiki.scratch.mit.edu/wiki/Block_Plugin#Basic_Syntax
 
 You have no question because of simple plugin.
 
+== Screenshots ==
+1. Posted page 
+2. Single page
+
 
 == Changelog ==
 
