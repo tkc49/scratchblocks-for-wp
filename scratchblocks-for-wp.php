@@ -50,16 +50,20 @@ class Scratchblocks_For_WP {
 	}
 	public function scratchblocks( $atts, $content = null  ) 
 	{
-		$output = "<pre class=\"blocks\">";
+    	extract( shortcode_atts( array( 
+			'element' => 'pre',
+		), $atts));
+
+		$output = '<'.$element.' class="blocks">';
 		$output .= $content;
-		$output .= "</pre>";
+		$output .= '</'.$element.'>';
 		return $output;
 	}
 	public function wp_head( )
 	{
     	echo "<script>\n";
     	echo "\t$(document).ready( function( ) {\n";
-		echo "\t\tscratchblocks2.parse( );\n";
+		echo "\t\tscratchblocks2.parse('.blocks');\n";
 		echo "\t});\n";
     	echo "</script>\n";
 	}
