@@ -71,7 +71,7 @@ class Scratchblocks_For_WP {
 	{
 		wp_enqueue_style( 
 			'scratchblocks2-style',
-			'//blob8108.github.io/scratchblocks2/scratchblocks2.css',
+		    plugins_url(  'lib/scratchblocks2.css', __FILE__ ),
 			array( ),
 			$this->version,
 			'all'
@@ -79,7 +79,7 @@ class Scratchblocks_For_WP {
 
 		wp_enqueue_script( 
 			'scratchblocks2',
-			'//blob8108.github.io/scratchblocks2/scratchblocks2.js',
+		    plugins_url(  'lib/scratchblocks2.js', __FILE__ ),
 			array(  'jquery' ),
 			$this->version,
 			true
